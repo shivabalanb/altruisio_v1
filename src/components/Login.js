@@ -8,8 +8,9 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <button onClick={signin}>Sign In</button>
+        <div class="text-center">
+            <h1 class="display-1 ">Altruismo</h1>
+            <button class="btn btn-default" onClick={signin}>Sign In</button>
         </div>
     )
 }

@@ -6,24 +6,16 @@ import {
     Link
   } from "react-router-dom";
 import {auth} from '../firebase'
+import Home from './Home';
 import './Navbar.css'
+import Profile from './Profile';
+import Volunteer from './Volunteer';
 
 function Navbar() {
     const logout = () => {
         auth.signOut()
     }
-
-    function Home() {
-        return <h2>Home</h2>;
-      }
       
-      function About() {
-        return <h2>About</h2>;
-      }
-      
-      function Users() {
-        return <h2>Users</h2>;
-      }
     return (
 
     <div>
@@ -40,10 +32,10 @@ function Navbar() {
         <a class="nav-link" href="#"><Link to="/">Home</Link><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><Link to="/about">About</Link></a>
+        <a class="nav-link" href="#"><Link to="/volunteer">Volunteer</Link></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><Link to="/users">Users</Link></a>
+        <a class="nav-link" href="#"><Link to="/profile">Profile</Link></a>
       </li>
       
     </ul>
@@ -56,11 +48,11 @@ function Navbar() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/profile">
+            <Profile />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/volunteer">
+            <Volunteer />
           </Route>
           <Route path="/">
             <Home />

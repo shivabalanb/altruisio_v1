@@ -10,6 +10,7 @@ import Home from './Home';
 import './Navbar.css'
 import Profile from './Profile';
 import Volunteer from './Volunteer';
+import Logo from './altruismo.PNG'
 
 function Navbar() {
     const logout = () => {
@@ -22,20 +23,21 @@ function Navbar() {
 
         <Router>
       <div>
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Altruismo</a>
+        <nav class="sticky-top navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+    <img src={Logo} class="d-inline-block align-top w-50" alt=""/>
+  </a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
       
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><Link to="/">Home</Link><span class="sr-only">(current)</span></a>
+      <li class="nav-item" >
+        <a class="nav-link" ><Link to="/" style={{color: 'white'}}>Home</Link></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><Link to="/volunteer">Volunteer</Link></a>
+        <a class="nav-link"><Link to="/volunteer" style={{color: 'white'}}>Volunteer</Link></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><Link to="/profile">Profile</Link></a>
+        <a class="nav-link"><Link to="/profile" style={{color: 'white'}}>Profile</Link></a>
       </li>
       
     </ul>
@@ -43,7 +45,6 @@ function Navbar() {
   <button class="btn btn-default" onClick={logout}>Logout</button>
 
 </nav>
-        </div>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}

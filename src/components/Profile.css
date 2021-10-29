@@ -1,0 +1,25 @@
+.container-p {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 200px;
+}
+
+img {
+  width: 100%;
+  margin: auto;
+  display: block;
+  height: auto;
+}
+
+.imgb {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  background: rgb(139, 201, 219);
+}
+
+@media screen {
+}

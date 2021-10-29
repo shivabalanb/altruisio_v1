@@ -1,20 +1,36 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {auth} from '../firebase'
 import firebase from 'firebase'
 import './Profile.css'
 import headshot from './headshot_natural.jpg'
 import {Card} from 'react-bootstrap'
+import { useList } from "react-firebase-hooks/database";
 
 function Profile() {
-    const firebaseApp = firebase.apps[0]
+
     const db = firebase.firestore();
-    const fetchBlogs=async()=>{
-        const response=db.collection('users');
-        const data=await response.get();
-        let userinfo = data.docs.filter(item=>{
-            return item.data()
-           })
-        console.log(userinfo);
+
+    useEffect(() => {
+        if (groceryListId) {
+          FirestoreService.getGroceryList(groceryListId)
+            .then(groceryList => {
+              if (groceryList.exists) {
+                setError(null);
+                setGroceryList(groceryList.data());
+              } else {
+                setError('grocery-list-not-found');
+                setGroceryListId();
+              }
+            })
+            .catch(() => setError('grocery-list-get-fail'));
+        }s
+      }, [groceryListId, setGroceryListId]);
+
+    function addData(){
+        return db.collection('users').add({
+            created: firebase.firestore.FieldValue.serverTimestamp(),
+            users: [{name: 'test'}]
+        })
     }
 
     return (
@@ -25,9 +41,8 @@ function Profile() {
                <div className=' card h-75' style={{width: "400px"}}>
                  
                    <div className='p-5 align-middle imgb'>
-                   <img onClick={fetchBlogs} src={headshot} alt="" />
+                   <img src={headshot} alt="" />
                    </div>
-                   
                    
                    
                </div>
@@ -39,7 +54,7 @@ function Profile() {
 
                    <i class="fas fa-book-open"></i>
                 </Card>
-                <p>{JSON.stringify(firebaseApp.options, null, 2)}</p>
+                <button onClick={addData}>LOL</button>
            </div> 
         </div>
     )

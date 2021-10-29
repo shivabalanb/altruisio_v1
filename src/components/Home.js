@@ -13,7 +13,7 @@ function Home() {
     setIndex(selectedIndex);
   };
     return (
-        <div className="text-center justify-content-center">
+        <div className="text-center justify-content-center p-2">
             {/* <h2 className="display-4 m-5">Home</h2> */}
             <div className="m-auto ">
             <Carousel activeIndex={index} onSelect={handleSelect}  indicators={false} controls={true} nextLabel={''} prevLabel={''}>

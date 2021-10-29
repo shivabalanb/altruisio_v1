@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
-function signUp() {
+function SignUp() {
     return (
         
 
@@ -9,7 +9,8 @@ function signUp() {
                 <Card className='text-center'>
                    
                
-                <h2>Thanks for signing up!</h2>
+                <h2>Your Schedule</h2>
+                <h4>Bentonville Public Library</h4>
                 <p className='m-5'>You have signed up to volunteer at the Bentonville Public Library on Monday, November 8th, 2021, from 3:00PM CDT to 5:00PM CDT.</p>                
                
                 </Card>
@@ -18,4 +19,4 @@ function signUp() {
     )
 }
 
-export default signUp
+export default SignUp

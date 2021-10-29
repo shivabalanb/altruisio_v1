@@ -10,7 +10,8 @@ import Home from './Home';
 import './Navbar.css'
 import Profile from './Profile';
 import Volunteer from './Volunteer';
-import Logo from './altruismo.PNG'
+import Logo from './altruismo.PNG';
+import SignUp from './SignUp';
 
 function Navbar() {
     const logout = () => {
@@ -57,6 +58,9 @@ function Navbar() {
           </Route>
           <Route path="/">
             <Home />
+          </Route>
+          <Route path="/myschedule">
+            <SignUp />
           </Route>
         </Switch>
       </div>

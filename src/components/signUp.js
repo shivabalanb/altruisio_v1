@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card} from 'react-bootstrap'
-function SignUp() {
+function signUp() {
     return (
         
 
@@ -19,4 +19,4 @@ function SignUp() {
     )
 }
 
-export default SignUp
+export default signUp

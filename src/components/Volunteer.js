@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
-import SignUp from "./SignUp"
+import signUp from "./signUp"
 import {
     BrowserRouter as Router,
     Switch,
@@ -33,7 +33,7 @@ function Volunteer() {
                    </div>
        </Switch>
       <Switch path="/myschedule">
-        <SignUp />
+        <signUp />
       </Switch>
        </Router>
     )

@@ -5,17 +5,17 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import {auth} from '../firebase'
+// import {auth} from '../not-used/firebase'
 import Home from './Home';
 import './Navbar.css'
 import Profile from './Profile';
 import Volunteer from './Volunteer';
 import Logo from './altruismo.PNG';
-import SignUp from './SignUp';
+import signUp from './signUp';
 
 function Navbar() {
     const logout = () => {
-        auth.signOut()
+        // auth.signOut()
     }
       
     return (
@@ -60,7 +60,7 @@ function Navbar() {
             <Home />
           </Route>
           <Route path="/myschedule">
-            <SignUp />
+            <signUp />
           </Route>
         </Switch>
       </div>
